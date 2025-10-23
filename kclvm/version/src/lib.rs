@@ -1,9 +1,6 @@
 //! Copyright The KCL Authors. All rights reserved.
 
-pub const VERSION: &str = match option_env!("CARGO_PKG_VERSION") {
-  Some(v) => v,
-  None => include_str!("./../../../VERSION"),
-};
+pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 pub const CHECK_SUM: &str = "c020ab3eb4b9179219d6837a57f5d323";
 pub const GIT_SHA: &str = env!("VERGEN_GIT_SHA");
 pub const HOST_TRIPLE: &str = env!("VERGEN_RUSTC_HOST_TRIPLE");
